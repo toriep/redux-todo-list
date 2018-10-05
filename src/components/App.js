@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import List from './list';
+import AddItem from './add_item';
 
 class App extends Component {
-  render() {
+  render() {// the '/' means home, so for the home page, List component will be rendered
     return (
       <div className="container">
-        <h1 className="center">To Do App</h1>
-
-        <Route path='/' exact Component={List}/>
-        <List/>
+          <Route path='/' exact component={List}/>
+          <Route path="/add" component={AddItem}/>
       </div>
     );
   }
